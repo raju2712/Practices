@@ -4,11 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.time.Duration;
 import java.util.List;
-
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
@@ -43,14 +39,14 @@ public class Flipkart_ReturnDataBackToExcel {
 			String Name = Pname.get(i).getText();
 			String Price = Pprice.get(i).getText();
 			
-//			System.out.println(Name);
-//			System.out.println(Price);
+			System.out.println(Name);
+		    System.out.println(Price);
 
-			FileInputStream fis = new FileInputStream(".\\src\\test\\resources\\TestData4.xlsx");
+			FileInputStream fis = new FileInputStream(".\\src\\test\\resources\\TestData.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
-			wb.getSheet("Sheet1").createRow(i).createCell(0, CellType.STRING).setCellValue(Name);
-			wb.getSheet("Sheet1").getRow(i).createCell(1, CellType.STRING).setCellValue(Price);
-			FileOutputStream fos = new FileOutputStream(".\\src\\test\\resources\\TestData4.xlsx");
+			wb.getSheet("Data").createRow(i).createCell(0, CellType.STRING).setCellValue(Name);
+			wb.getSheet("Data").getRow(i).createCell(1, CellType.STRING).setCellValue(Price);
+			FileOutputStream fos = new FileOutputStream(".\\src\\test\\resources\\TestData.xlsx");
 			wb.write(fos);
 			wb.close();
 			

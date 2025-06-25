@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-19T10:15:26 IST" name="Default suite" finished-at="2025-06-19T10:16:28 IST" duration-ms="62233">
+  <suite started-at="2025-06-25T11:10:39 IST" name="Default suite" finished-at="2025-06-25T11:11:29 IST" duration-ms="49747">
     <groups>
     </groups>
-    <test started-at="2025-06-19T10:15:26 IST" name="Default test" finished-at="2025-06-19T10:16:28 IST" duration-ms="62233">
-      <class name="TestAutomationPractice.SVG">
-        <test-method signature="svg()[pri:0, instance:TestAutomationPractice.SVG@ae13544]" started-at="2025-06-19T10:15:26 IST" name="svg" finished-at="2025-06-19T10:16:28 IST" duration-ms="61842" status="PASS">
+    <test started-at="2025-06-25T11:10:39 IST" name="Default test" finished-at="2025-06-25T11:11:29 IST" duration-ms="49747">
+      <class name="Others.Flipkart_ReturnDataBackToExcel">
+        <test-method signature="Amazon()[pri:0, instance:Others.Flipkart_ReturnDataBackToExcel@351d00c0]" started-at="2025-06-25T11:10:39 IST" name="Amazon" finished-at="2025-06-25T11:11:29 IST" duration-ms="49686" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- svg -->
-      </class> <!-- TestAutomationPractice.SVG -->
+        </test-method> <!-- Amazon -->
+      </class> <!-- Others.Flipkart_ReturnDataBackToExcel -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

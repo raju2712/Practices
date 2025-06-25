@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Ahi.Scenarios">
+      <class name="Others.Flipkart_ReturnDataBackToExcel">
         <methods>
-          <include name="worldOmeter2"/>
+          <include name="Amazon"/>
         </methods>
-      </class> <!-- Ahi.Scenarios -->
+      </class> <!-- Others.Flipkart_ReturnDataBackToExcel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
