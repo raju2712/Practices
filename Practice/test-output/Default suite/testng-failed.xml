@@ -5,7 +5,7 @@
     <classes>
       <class name="Others.Flipkart_ReturnDataBackToExcel">
         <methods>
-          <include name="Amazon"/>
+          <include name="Flipkart"/>
         </methods>
       </class> <!-- Others.Flipkart_ReturnDataBackToExcel -->
     </classes>

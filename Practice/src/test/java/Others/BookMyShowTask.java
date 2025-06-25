@@ -7,16 +7,24 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class BookMyShowTask {
 
 	@Test
-	public void BMS() {
+	public void BMS() throws InterruptedException {
+		
+		String MOVIE = "Lucky Baskar";
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 		driver.get("https://in.bookmyshow.com/explore/home/bengaluru");
+		Thread.sleep(2000);
+		//driver.findElement(By.xpath("//span[@class='bwc__sc-1nbn7v6-8 koYQuW']")).sendKeys(MOVIE);
+		driver.findElement(By.xpath("//div[@class='sc-b1h692-3 fuVyWn']/descendant::div[contains(@class,'bwc__sc-m1rlyj-3 bwc__sc-1')]")).sendKeys(MOVIE);
+		Actions a = new Actions(driver);
+		a.moveToElement(driver.findElement(By.xpath("//span[text()='Lucky Baskhar']"))).click().perform();
 //		WebElement locFrame = driver.findElement(By.xpath("//span[contains(text(),'Popular Cities')]"));
 //		driver.switchTo().frame(driver.findElement(By.xpath("//div[@class='bwc__sc-1ihur1g-5 fIsZNV in-animation']")));
 //		driver.findElement(By.xpath("//ul[@class='bwc__sc-ttnkwg-15 fFoiPE']/descendant::span[contains(text(),'Bengaluru')]")).click();

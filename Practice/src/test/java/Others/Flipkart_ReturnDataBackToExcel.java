@@ -22,25 +22,34 @@ public class Flipkart_ReturnDataBackToExcel {
 	 */
 	
 	@Test
-	public void Amazon() throws Throwable {
-
+	public void Flipkart() throws Throwable {
+		
+		String BRAND = "Cars toys";
+		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		
 		driver.get("https://www.flipkart.in/");
-		driver.findElement(By.name("q")).sendKeys("iphone16", Keys.ENTER);
+		driver.findElement(By.name("q")).sendKeys(BRAND , Keys.ENTER);
+		driver.findElement(By.xpath("//div[text()='Price -- High to Low']")).click();
+		Thread.sleep(3000);
 
-		List<WebElement> Pname = driver.findElements(By.xpath("//div[@class=\"yKfJKb row\"]/descendant::div[@class=\"KzDlHZ\"]"));
-		List<WebElement> Pprice = driver.findElements(By.xpath("//div[@class=\"yKfJKb row\"]/descendant::div[@class=\"Nx9bqj _4b5DiR\"]"));
+		//For Vertical Aligned products
+//		List<WebElement> Pname = driver.findElements(By.xpath("//div[@class='yKfJKb row']/descendant::div[@class='KzDlHZ']"));
+//		List<WebElement> Pprice = driver.findElements(By.xpath("//div[@class='yKfJKb row']/descendant::div[@class='Nx9bqj _4b5DiR']"));
+		
+		//For Horizontal Aligned products
+		List<WebElement> Pname = driver.findElements(By.xpath("//div[@class='slAVV4']/descendant::a[@class='wjcEIp']"));
+		List<WebElement> Pprice = driver.findElements(By.xpath("//div[@class='slAVV4']/descendant::div[@class='Nx9bqj']"));
 
 		for (int i = 0; i <= Pname.size()-1; i++) {
 
 			String Name = Pname.get(i).getText();
 			String Price = Pprice.get(i).getText();
 			
-			System.out.println(Name);
-		    System.out.println(Price);
+//			System.out.println(Name);
+//		    System.out.println(Price);
 
 			FileInputStream fis = new FileInputStream(".\\src\\test\\resources\\TestData.xlsx");
 			Workbook wb = WorkbookFactory.create(fis);
@@ -48,10 +57,8 @@ public class Flipkart_ReturnDataBackToExcel {
 			wb.getSheet("Data").getRow(i).createCell(1, CellType.STRING).setCellValue(Price);
 			FileOutputStream fos = new FileOutputStream(".\\src\\test\\resources\\TestData.xlsx");
 			wb.write(fos);
-			wb.close();
-			
+			wb.close();			
 		}
 		driver.quit();
 	}
-
 }
