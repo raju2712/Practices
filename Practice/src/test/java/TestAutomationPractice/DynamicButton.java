@@ -22,6 +22,7 @@ public class DynamicButton {
 	 	WebElement btn = driver.findElement(By.xpath("//button[@onclick='toggleButton(this)']"));
 	 	System.out.println(btn.getText());
 	 	btn.click();
+	 	
 	 	System.out.println(btn.getText());
 	 	Thread.sleep(2000);
 	 	btn.click();
